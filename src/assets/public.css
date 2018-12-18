@@ -1,3 +1,6 @@
+.mt34{ margin-top: 34px; }
+
+
 .cBoth{
     content:'';
     height:0;
@@ -5,6 +8,12 @@
     display: block;
     clear: both;
 }
+
+
+
+
+
+
 @keyframes login {
     0%{
         margin-top: -300px;
@@ -12,6 +21,16 @@
     }
     100%{
         margin-top: -225px;
+        opacity: 1;
+    }
+}
+@keyframes sign {
+    0%{
+        margin-top: -365px;
+        opacity: 0;
+    }
+    100%{
+        margin-top: -290px;
         opacity: 1;
     }
 }

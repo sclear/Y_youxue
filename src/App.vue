@@ -1,12 +1,16 @@
 <template>
   <div id="app">
+    <headr></headr>
     <router-view/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  components:{
+    headr: () => import("./components/common/head.vue"),
+  }
 }
 </script>
 

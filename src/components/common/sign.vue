@@ -2,22 +2,31 @@
   <div>
     <div class="showdn"></div>
     <div class="login">
-      <div class="head">登录</div>
+      <div class="head">注册</div>
       <div class="phone">
         <span>手机号</span>
         <input type="text">
       </div>
       <div class="phone">
-        <span>密码</span>
+        <span>验证码</span>
+        <input type="text" class="addYzm">
+        <p class="sendYzm">发送验证码</p>
+      </div>
+      <div class="phone">
+        <span>设置密码</span>
         <input type="password">
       </div>
-      <div class="pass">
+      <div class="phone">
+        <span>确认密码</span>
+        <input type="password">
+      </div>
+      <!-- <div class="pass">
         <div class="forget">
           <input type="checkbox">
           <span>记住密码</span>
         </div>
         <div class="forgetPass">忘记密码?</div>
-      </div>
+      </div> -->
       <div class="login_sign">
         <div class="loginBtn">立即登录</div>
         <div class="sign">没有账号去  <span>注册</span></div>
@@ -48,14 +57,14 @@ export default {
 <style lang='less' scoped >
 
 .login {
-  animation: login .6s linear forwards;
+  animation: sign .6s linear forwards;
   width: 649px;
-  height: 450px;
+  height: 580px;
   border-radius: 8px;
   background: white;
   position: fixed;
   top: 50%;
-  margin-top: -225px;
+  margin-top: -290px !important;
   left: 50%;
   margin-left: -325px;
   .head {
@@ -166,5 +175,24 @@ export default {
   height: 100vh;
   width: 100vw;
   background: rgba(0, 0, 0, 0.45);
+}
+.addYzm{
+    width:30% !important;
+}
+.sendYzm{
+    font-size: 16px;
+    height:40px;
+    width:90px !important;
+    line-height: 40px;
+    text-align: center;
+    padding-left: 20px;
+    float: right;
+    color:#FFFFFF;
+    margin-right: 120px;
+    background: #1DBCA6;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 12px;
+    padding-right: 20px;
 }
 </style>

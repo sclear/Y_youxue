@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <!-- header -->
-    <headr></headr>
+    <!-- <headr></headr> -->
     <div class="banner_nav">
       <div class="swiper"></div>
       <div class="nav">
@@ -10,13 +10,105 @@
           <ul>
             <li>小初课程
               <div class="detail">
-                
+                <div class="group">
+                  <div class="titles">一年级</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                </div>
+                <div class="group">
+                  <div class="titles">一年级</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                </div>
+                <div class="group">
+                  <div class="titles">一年级</div>
+                 <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                </div>
               </div>
             </li>
-            <li>高中课程</li>
-            <li>大学课程</li>
-            <li>考研课程</li>
-            <li>成人课程</li>
+            <li>小初课程
+              <div class="detail">
+                <div class="group">
+                  <div class="titles">一年级</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                </div>
+                <div class="group">
+                  <div class="titles">一年级</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                </div>
+                <div class="group">
+                  <div class="titles">一年级</div>
+                 <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                </div>
+              </div>
+            </li>
+            <li>小初课程
+              <div class="detail">
+                <div class="group">
+                  <div class="titles">一年级</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                </div>
+                <div class="group">
+                  <div class="titles">一年级</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                </div>
+                <div class="group">
+                  <div class="titles">一年级</div>
+                 <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                </div>
+              </div>
+            </li>
+            <li>小初课程
+              <div class="detail">
+                <div class="group">
+                  <div class="titles">一年级</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                </div>
+                <div class="group">
+                  <div class="titles">一年级</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                </div>
+                <div class="group">
+                  <div class="titles">一年级</div>
+                 <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                  <div class="cm">语文</div>
+                </div>
+              </div>
+            </li>
+  
           </ul>
         </nav>
       </div>
@@ -37,6 +129,10 @@
     <foots></foots>
     <!-- 登录 -->
     <login v-if="login"></login>
+    <!-- 注册 -->
+    <sign v-if="sign"></sign>
+    <!-- 第三方登录 -->
+    <third v-if="thir"></third>
     <!-- 选择课程 -->
     <choseclass v-if="chose"></choseclass>
     <!-- 评测 -->
@@ -48,23 +144,27 @@
 export default {
   data() {
     return {
-      login:false,
-      chose:false,
-      test:false,
+      login: false,   //登录
+      thir: false,    //第三方登录
+      chose: false,   //选择课程
+      test: false,    //测验
+      sign: false,    //注册
     };
   },
   components: {
-    'headr': () => import('./../common/head.vue'),
-    'foots': () => import('./../common/foot.vue'),
-    'login': () => import('./../common/login.vue'),
-    'more': () => import('./compts/more.vue'),
-    'refer': () => import('./compts/refer.vue'),
-    'goods': () => import('./compts/goods.vue'),
-    'hot': () => import('./compts/hot.vue'),
-    'ad': () => import('./compts/ad.vue'),
-    'letter': () => import('./compts/letter.vue'),
-    'choseclass': () => import('./compts/choseclas.vue'),
-    'test': () => import('./compts/test.vue'),
+    headr: () => import("./../common/head.vue"),
+    foots: () => import("./../common/foot.vue"),
+    login: () => import("./../common/login.vue"),
+    sign: () => import("./../common/sign.vue"),
+    third: () => import("./../common/thirdpard.vue"),
+    more: () => import("./compts/more.vue"),
+    refer: () => import("./compts/refer.vue"),
+    goods: () => import("./compts/goods.vue"),
+    hot: () => import("./compts/hot.vue"),
+    ad: () => import("./compts/ad.vue"),
+    letter: () => import("./compts/letter.vue"),
+    choseclass: () => import("./compts/choseclas.vue"),
+    test: () => import("./compts/test.vue")
   }
 };
 </script>
@@ -73,7 +173,7 @@ export default {
 header {
   height: 118px;
 }
-.home{
+.home {
   // position: relative;
 }
 .banner_nav {
@@ -108,24 +208,53 @@ header {
       }
       ul {
         float: right;
-        width:793px;
+        width: 793px;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         box-sizing: border-box;
         padding-top: 60px;
         li {
           list-style: none;
-          font-weight:400;
-          color:rgba(255,255,255,1);
+          font-weight: 400;
+          color: rgba(255, 255, 255, 1);
           font-size: 16px;
-          padding:8px 20px;
+          padding: 8px 20px;
           cursor: pointer;
-          transition: all .1s linear;
-          &:hover{
-            background: #FFFFFF;
-            color:#1DBCA6;
+          background: rgba(0, 0, 0, 0);
+          transition: all 0.3s linear;
+          &:hover {
+            background: #ffffff;
+            color: #1dbca6;
+          }
+          &:hover .detail {
+            animation: boxs .2s linear forwards;
+            padding: 30px 15px;
+            height: auto;
           }
         }
+      }
+    }
+  }
+}
+.detail {
+  position: absolute;
+  overflow: hidden;
+  margin-left: -100px;
+  background: #ffffff;
+  height: 0;
+  margin-top: 8px;
+  color: black;
+  .group {
+    float: left;
+    margin:20px 35px 0 35px;
+    color:#1DBCA6;
+    font-size: 20px;
+    .cm{
+      margin-top: 15px;
+      color:#535354;
+      font-size: 14px;
+      &:hover{
+        color:#1DBCA6;
       }
     }
   }
