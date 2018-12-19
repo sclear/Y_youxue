@@ -3,7 +3,19 @@
 @mainCol:#33CC99;   //主要的绿色
 @col333:#333;       //常用黑色字体
 @bgcol:#F1F1F1;     //背景灰色
+@red:#FF2121;       //红色 类似RMB金额等
+
 .btnBox{
     text-align: center;
 
+}
+//清除浮动
+.Both{
+    &::after{
+        content:'';
+        height:0;
+        width:0;
+        display: block;
+        clear: both;
+    }
 }

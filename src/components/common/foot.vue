@@ -32,6 +32,7 @@ export default {
     background: #F3F1F1;
     padding-top: 60px;
     box-sizing: border-box;
+    color:@txt;
     ul{
         margin:0 auto 0 auto;
         width:1200px;
@@ -39,7 +40,7 @@ export default {
         justify-content: space-between;
         li{
             list-style: none;
-            font-size: 24px;
+            font-size: 16px;
         }
     }
     .police{

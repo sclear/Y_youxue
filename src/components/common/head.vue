@@ -4,16 +4,13 @@
       <div class="logo"></div>
       <div class="serch">
         <input placeholder="搜索课程或者老师" type="text">
-        <span>icon</span>
+        <span class="iconfont">&#xe632;</span>
       </div>
       <div class="hint">
-        <i>icon</i>
+        <i class="iconfont hin">&#xe600;</i>
       </div>
-      <!-- <div class="login_sign">登录|注册</div> -->
       <div class="center">个人中心</div>
-      <div class="login_sign">登录|注册</div>
-
-      <!-- <div class="hint"><i>icon</i></div> -->
+      <div class="login_sign"><span>登录</span>|<span>注册</span></div>
     </header>
   </div>
 </template>
@@ -34,6 +31,7 @@ header {
   height: 118px;
   box-sizing: border-box;
   padding-top: 33px;
+  color:@txt;
   & > div {
     float: left;
   }
@@ -60,10 +58,14 @@ header {
     }
     & > span {
       float: left;
-      // display: inline-block;
       width: 104px;
       height: 100%;
       background: rgba(250, 198, 46, 1);
+      font-size: 40px;
+      text-align: center;
+      line-height: 52px;
+      color:rgb(241, 234, 234);
+      cursor: pointer;
     }
   }
   .login_sign,
@@ -73,8 +75,18 @@ header {
     float: right;
     margin-right: 30px;
   }
+  .login_sign{
+    span{
+      margin:auto 2px;
+      cursor: pointer;
+    }
+  }
 }
-
+.hin{
+  font-size: 34px;
+  color:@txt;
+  cursor: pointer;
+}
 //白色背景 阻止影响
 .cus{
     background: white;

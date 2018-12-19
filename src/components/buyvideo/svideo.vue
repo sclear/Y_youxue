@@ -1,7 +1,6 @@
 <template>
   <div class="svideo">
-    <!-- <headr></headr> -->
-    <sitmap :sitmap="sitmap"></sitmap>
+    <sitmap class="sitmap" :sitmap="sitmap"></sitmap>
     <div class="top_see">
       <div class="leftVideo">
         <div class="videos">video</div>
@@ -18,7 +17,20 @@
         <div class="pri">
           <div class="class_sum">36节课，实现EXCEL小白到高手的转变</div>
           <div class="study">办公软件大佬主讲，随时随地想学就学</div>
-          <div class="box"></div>
+          <div class="boxs">
+            <div class="pri">
+              <div>价格</div>
+              <div>￥689</div>
+            </div>
+            <div class="timess">
+              <div>课时</div>
+              <div>24</div>
+            </div>
+            <div class="timelong">
+              <div>每课时长</div>
+              <div>30分钟</div>
+            </div>
+          </div>
           <div class="btnGroup">
             <div class="buy">立即购买</div>
             <div class="see_vide">免费试听</div>
@@ -30,10 +42,10 @@
       <!-- 左侧课程介绍 -->
       <div class="v_content">
         <div class="v_group">
-          <div class="btn">课程介绍</div>
-          <div class="btn">课程评论</div>
+          <div @click="swichs(true)"  class="btn" :class="indexs?'chose':''">课程介绍</div>
+          <div @click="swichs(false)" class="btn" :class="indexs?'':'chose'">课程评论</div>
         </div>
-        <div class="jieshao">
+        <div v-if="indexs" class="jieshao">
           <bor text="课程简介"></bor>
           <div
             class="jieshao_title"
@@ -69,6 +81,67 @@
               <div>icon</div>
             </div>
           </div>
+        </div>
+        <div v-if="!indexs" class="jieshao">
+          <div>发表您的评论，让更多的人看到这门课程</div>
+          <textarea class="teax"></textarea>
+          <div class="setPl">
+            <div class="iconfont icon">&#xe709;</div>
+            <div class="i_study">添加学习成果（图片不超过500k）</div>
+            <div class="i_btn">发表评论</div>
+          </div>
+          <hr>
+          <bor text='评论列表'></bor>
+          <div class="group_all">
+            <div class="img"></div>
+            <div class="detail_group">
+              <div class="pho">157****8813</div>
+              <div class="photime">2018-11-03</div>
+              <div class="pl">很不错，课件全是干货，能学到东西。而且老师讲课挺有趣的。</div>
+              <img class="pl_img" src="" alt="234">
+            </div>
+
+          </div>
+          <div class="group_all">
+            <div class="img"></div>
+            <div class="detail_group">
+              <div class="pho">157****8813</div>
+              <div class="photime">2018-11-03</div>
+              <div class="pl">很不错，课件全是干货，能学到东西。而且老师讲课挺有趣的。</div>
+              <img class="pl_img" src="" alt="234">
+            </div>
+
+          </div>
+          <div class="group_all">
+            <div class="img"></div>
+            <div class="detail_group">
+              <div class="pho">157****8813</div>
+              <div class="photime">2018-11-03</div>
+              <div class="pl">很不错，课件全是干货，能学到东西。而且老师讲课挺有趣的。</div>
+              <img class="pl_img" src="" alt="234">
+            </div>
+
+          </div>
+          <div class="group_all">
+            <div class="img"></div>
+            <div class="detail_group">
+              <div class="pho">157****8813</div>
+              <div class="photime">2018-11-03</div>
+              <div class="pl">很不错，课件全是干货，能学到东西。而且老师讲课挺有趣的。</div>
+              <img class="pl_img" src="" alt="234">
+            </div>
+
+          </div>
+          <div class="group_all">
+            <div class="img"></div>
+            <div class="detail_group">
+              <div class="pho">157****8813</div>
+              <div class="photime">2018-11-03</div>
+              <div class="pl">很不错，课件全是干货，能学到东西。而且老师讲课挺有趣的。</div>
+              <img class="pl_img" src="" alt="234">
+            </div>
+          </div>
+          <pagination class="pagin" :total="total" :current-page='current' @pagechange="pagechange"></pagination>
         </div>
       </div>
       <!-- 右侧推荐 -->
@@ -179,7 +252,10 @@ export default {
             }
           ]
         }
-      ]
+      ],
+      indexs:true,
+      total:100,
+      current:1,
     };
   },
   mounted() {
@@ -193,6 +269,14 @@ export default {
         },
     });
   },
+  methods: {
+    swichs(res) {
+      this.indexs = res;
+    },
+    pagechange(res) {
+      this.current = res;
+    }
+  },
   components: {
     headr: () => import("./../common/head.vue"),
     foots: () => import("./../common/foot.vue"),
@@ -205,9 +289,9 @@ export default {
 .svideo {
   color: @txt;
   background: #f5f5f5;
-  padding: 0px 0 56px 0;
+  padding: 26px 0 56px 0;
   .sitmap {
-    margin: 26px auto 16px auto;
+    margin: 0px auto 16px auto;
   }
   .top_see {
     height: 469px;
@@ -288,10 +372,46 @@ export default {
           }
         }
       }
-      .box {
+      .boxs {
         width: 436px;
         height: 180px;
         background: #f6f6f6;
+        box-sizing: border-box;
+        padding:29px 0 0 36px;
+        .pri,.timess,.timelong{
+          font-size: 16px;
+          color:@txt;
+          .Both;
+          &>div{
+            float: left;
+          }
+        }
+        .pri{
+          div:first-child{
+            width:110px;
+          }
+          div:last-child{
+            color:@red;
+            font-size: 29px;
+            font-weight:400;
+          }
+        }
+        .timess{
+          margin-top: 15px;
+          div:first-child{
+            width:114px;
+          }
+          div:last-child{
+          }
+        }
+        .timelong{
+          margin-top: 20px;
+          div:first-child{
+            width:114px;
+          }
+          div:last-child{
+          }
+        }
       }
     }
   }
@@ -310,13 +430,14 @@ export default {
           float: left;
           width: 131px;
           height: 56px;
-          color: white;
-          background: @mainCol;
           text-align: center;
-        }
-        .btn:last-child {
           background: white;
           color: @txt;
+          cursor: pointer;
+        }
+        .chose{
+          color: white;
+          background: @mainCol;
         }
       }
       .jieshao {
@@ -387,6 +508,79 @@ export default {
             }
             div:last-child {
               float: right;
+            }
+          }
+        }
+        // 评论
+        .teax{
+          resize: none;
+          height:123px;
+          width:592px;
+          margin-top: 20px;
+        }
+        .setPl{
+          width:594px;
+          margin-top: 36px;
+          .Both;
+          &>div{
+            float: left;
+          }
+          .icon{
+            font-size: 24px;
+            line-height: 40px;
+          }
+          .i_study{
+            line-height: 40px;
+            margin: 0 165px 0 16px;
+          }
+          .i_btn{
+            float: right;
+            width:120px;
+            height:40px;
+            background: #FAC62E;
+            line-height: 40px;
+            text-align: center;
+            color:@col333;
+            cursor: pointer;
+          }
+        }
+        hr{
+          margin:35px 0 35px -30px;
+          border-top: 1px solid #808080 !important;
+        }
+        .group_all{
+          margin-top: 21px;
+          padding-bottom: 35px;
+          .img{
+            height:64px;
+            width:64px;
+            border-radius: 50%;
+            background: @red;
+            float: left;
+          }
+          .detail_group{
+            overflow: hidden;
+            box-sizing: border-box;
+            padding-left: 16px;
+            border-bottom: 1px solid #808080;
+            .pho{
+              color:@col333;
+              margin-top: 5px;
+              font-size: 16px;
+              font-weight:500;
+            }
+            .photime{
+              color:@col333;
+              margin-top: 20px;
+            }
+            .pl{
+              color:@txt;
+              margin-top: 39px;
+            }
+            .pl_img{
+              margin: 35px 0 29px 0;
+              max-width: 600px;
+              max-height: 400px;
             }
           }
         }
