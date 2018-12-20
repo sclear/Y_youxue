@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
+import center from './center'
 Vue.use(Router)
 
 export default new Router({
@@ -32,6 +32,12 @@ export default new Router({
     {
       //分类2
       path: '/classify2', component: resolve => require(['@/components/classify2/classify2.vue'], resolve)
+    },
+    {
+      //个人中心
+      path: '/center', 
+      component: resolve => require(['@/components/center/center.vue'], resolve),
+      children: [...center]
     },
   ]
 })

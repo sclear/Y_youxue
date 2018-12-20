@@ -1,19 +1,5 @@
 .mt34{ margin-top: 34px; }
-
-
-.cBoth{
-    content:'';
-    height:0;
-    width:0;
-    display: block;
-    clear: both;
-}
-
-
-
-
-
-
+.mt15{ margin-top: 15px; }
 @keyframes login {
     0%{
         margin-top: -300px;
@@ -70,4 +56,55 @@
     -webkit-font-smoothing: antialiased;
     -webkit-text-stroke-width: 0.2px;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* toast */
+  .Z-toast{
+    position: fixed;
+    height:50px;
+    width:200px;
+    top:20%;
+    left:50%;
+    margin-top: -25px;
+    margin-left: -100px;
+    background-color: rgba(0, 0, 0, 0.644);
+    z-index: 999999;
+    border-radius: 7px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    opacity: 0;
+    animation: toast 2s linear;
+}
+@keyframes toast{
+    0%{
+        top:15%;
+    }
+    10%{
+        opacity: 1;
+        top:20%;
+    }
+    80%{
+        opacity: 1;
+        top:20%;
+    }
+    100%{
+        opacity: 0;
+        top: 15%;
+    }
+}
+
+
+
+/* 修改全局scoll样式 */
+::-webkit-scrollbar {
+    width: 6px !important;
+    height: 16px;
+  }
+
+  /*定义滑块 内阴影+圆角*/
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #33CC99;
   }
